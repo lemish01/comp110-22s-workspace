@@ -1,6 +1,6 @@
-"""EX01 - Chardle - A cute step toward Wordle""" 
+"""EX01 - Chardle - A cute step toward Wordle.""" 
 
-_author_ = "730407722"
+__author__ = "730407722"
  
 desired_word: str = input("Enter a 5-character word:") 
 
@@ -10,7 +10,11 @@ if len(desired_word) != 5:
  
 entered_character: str = input("Enter a single character:")
 
-print("Searching for "+ entered_character + " in " + desired_word)
+if len(entered_character) != 1:
+    print("Error: Character must be a single character.")
+    exit()
+
+print("Searching for " + entered_character + " in " + desired_word)
 
 character_sum: int = 0
 
@@ -35,10 +39,10 @@ if entered_character == desired_word[4]:
     print(entered_character + " found at index 4 ")  
 
 if character_sum > 1:
-    print(str(character_sum) + " instance of " + entered_character + " found in " + desired_word) 
+    print(str(character_sum) + " instances of " + entered_character + " found in " + desired_word) 
 
 if character_sum == 1:
     print("1 instance of " + entered_character + " found in " + desired_word)
 
 if character_sum == 0:
-    print("No instance of " + entered_character + " found in " + desired_word )
+    print("No instances of " + entered_character + " found in " + desired_word)
