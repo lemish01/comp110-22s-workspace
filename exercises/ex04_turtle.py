@@ -2,7 +2,7 @@
 
 __author__ = "730407722"
 
-from ctypes.wintypes import FLOAT
+
 from turtle import Turtle, colormode, done
 import random 
 
@@ -16,28 +16,28 @@ def main() -> None:
     turt.speed(1000)
     stars_num: int = 0
     while stars_num < 50:
-         x = random.randint (-500,500)
-         y = random.randint (100,300)
-         stars(turt,x,y)
-         stars_num = stars_num + 1
+        x = random.randint(-500, 500)
+        y = random.randint(100, 300)
+        stars(turt, x, y)
+        stars_num = stars_num + 1
     tree(turt, 50, 20, 50, 20, 100)
-    forest_left(turt,25,25)
+    forest_left(turt, 25, 25)
     forest_right(turt, 25, 25)
     done()
 
 
-def tree_tri(dw: Turtle, x: float, y: float, z:float) -> None:
+def tree_tri(dw: Turtle, x: float, y: float, z: float) -> None: 
     """Drawing a triangle at location x,y with z scale."""
     dw.penup()
-    dw.goto(x,y)
+    dw.goto(x, y)
     dw.pendown()  
     colormode(255)
     dw.color("forest green")
     dw.pencolor(79, 115, 81)
     dw.begin_fill()
-    dw.fillcolor(42, 87, 54 )
+    dw.fillcolor(42, 87, 54)
     i: int = 0 
-    while (i<3):
+    while (i < 3): 
         dw.left(240)
         dw.forward(z)
         dw.left(240)
@@ -46,19 +46,19 @@ def tree_tri(dw: Turtle, x: float, y: float, z:float) -> None:
     return 
 
 
-def tree(dw: Turtle, x: float, y: float, z:float, width: float, length: float) -> None:
+def tree(dw: Turtle, x: float, y: float, z: float, width: float, length: float) -> None:
     """Drawing a tree by combining 3 triangles."""
-    trunk(dw, x - 6 , y - 144, width, length)
-    tree_tri(dw, x, y-65, 2.7*z)
-    tree_tri(dw, x, y-30, 2*z)
-    tree_tri(dw, x, y, 1.5*z)
+    trunk(dw, x - 6, y - 144, width, length)
+    tree_tri(dw, x, y - 65, 2.7 * z)
+    tree_tri(dw, x, y - 30, 2 * z)
+    tree_tri(dw, x, y, 1.5 * z)
     return
 
 
 def trunk(dw: Turtle, x: float, y: float, width: float, length: float) -> None:
     """Drawing the trunk of the tree at a location x,y withh length side and width side."""    
     dw.penup()
-    dw.goto(x,y)
+    dw.goto(x, y)
     dw.pendown()
     colormode(255)
     dw.color("brown")
@@ -67,7 +67,7 @@ def trunk(dw: Turtle, x: float, y: float, width: float, length: float) -> None:
     dw.fillcolor(44, 35, 28)
     i: int = 0 
     dw.seth(0)
-    while i<2: 
+    while i < 2: 
         dw.forward(width) 
         dw.right(90)
         dw.forward(length)
@@ -77,25 +77,28 @@ def trunk(dw: Turtle, x: float, y: float, width: float, length: float) -> None:
     return
 
 
-def forest_left(dw: Turtle, x:float, y:float) -> None:
+def forest_left(dw: Turtle, x: float, y: float) -> None: 
+    """Drawing multiple trees to the left of the page."""
     tree_num: int = 0
     while tree_num < 5:
         x = x - 100
-        tree(dw,x,20,50,20,100)
+        tree(dw, x, 20, 50, 20, 100)
         tree_num = tree_num + 1
 
 
-def forest_right(dw: Turtle, x:float, y:float) -> None:
+def forest_right(dw: Turtle, x: float, y: float) -> None: 
+    """Drawing multiple trees to the left of the page."""
     tree_num: int = 0
     while tree_num < 5:
         x = x + 100
-        tree(dw,x,20,50,20,100)
+        tree(dw, x, 20, 50, 20, 100)
         tree_num = tree_num + 1
 
-def stars(dw: Turtle, x: float, y:float) -> None:
+
+def stars(dw: Turtle, x: float, y: float) -> None:
     """Draws a random array of stars in the sky."""
     dw.penup()
-    dw.goto(x,y)
+    dw.goto(x, y)
     dw.pendown()  
     colormode(255)
     dw.color("yellow")
@@ -109,6 +112,7 @@ def stars(dw: Turtle, x: float, y:float) -> None:
         i = i + 1
     dw.end_fill()
     return
+
 
 if __name__ == "__main__":
     main()
