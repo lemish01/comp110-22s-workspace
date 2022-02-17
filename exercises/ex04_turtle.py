@@ -82,7 +82,7 @@ def forest_left(dw: Turtle, x: float, y: float) -> None:
     tree_num: int = 0
     while tree_num < 5:
         x = x - 100
-        tree(dw, x, 20, 50, 20, 100)
+        tree(dw, x, 20, 50, 20, 100) 
         tree_num = tree_num + 1
 
 
