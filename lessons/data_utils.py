@@ -21,5 +21,3 @@ def read_csv_rows(filename: str) -> list[dict[str, str]]:
     file_handle.close()
     
     return result 
-
-
