@@ -33,4 +33,5 @@ class Simpy:
         print("__add__ was called")
         return Union(self.values)
     
-    def __pow__
+    # def __getitem__(self, rhs: Union[unt, list[bool]]) -> Union[float, Simpy]:
+    #"""Given a list of bools, expression will return a new Simpy Object of masked values."""
